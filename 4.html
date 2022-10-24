@@ -1,1 +1,20 @@
-sdifjsdif
+GitHub Repo 를 클론하여 사용하려고 Username 과 password 를 입력하였으나 다음과 같은 인증오류가 발생하였다.
+
+remote : Support for password autentication was removed on ~~~
+fatal : Autentication failed for '~~~~~'
+
+원인:깃허브에서 2021년 중반부터 인증에 personal access token 을 사용하도록 바꾸면서 발생하는 오류이다. 이제 토큰이나 ssh 둘 중 하나로 인증을 해야 한다.
+
+해결방안:personal access token을 발행해서 비밀번호로 입력해주 면 됨.
+1.깃허브 오른쪽 상단 프로필눌러서 하위항목에 Settings 눌러줌 
+-> 2. developer settings 눌러줌 
+-> 3. 이어서 Personal access tokens -> Generate new token을 순서대로 클릭 
+-> 4.Note에는 토큰에 대한 설명을 입력합니다. Expiration에는 토큰 만료일을 설정합니다.(만료일 : 7,30,60,90,custom 설정가능)
+-> 5.CLI에서 레포지토리로 액세스하기 위해서는 위 이미지와 동일하게 repo를 체크
+-> 6.그 외 항목들은 본인 환경에 따라 체크
+-> 7.마지막으로 Generate token 버튼을 클릭. 버튼을 클릭하면 token이 나오게 되는데, 창을 닫지 말고 켜놓기. (마지막에 다시 사용하기 위해)
+-> 8.이전에 설정해두었던, keychain이 뜨게 되는데, 삭제한다. 만약 keychain이 뜨지 않는다면 무시하고 다음 단계로 넘어가시면 된다.
+-> 9.이제 터미널을 열고 username과 email을 설정함. username은 GitHub의 아이디, email은 GitHub에 설정 되어있는 email을 입력하면 된다.
+-> 10.마지막으로 git push를 진행하면 다음과 같이 username과 password를 요구한다. username에는 GitHub의 아이디를 적고, password에는 조금 전 발급 받았던 token을 적어줌.
+
+-> 성공적으로 Push!
